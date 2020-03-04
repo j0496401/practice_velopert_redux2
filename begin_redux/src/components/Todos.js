@@ -3,16 +3,17 @@ import { List, Map } from 'immutable';
 
 
 const TodoItem = ({ id, text, checked, onToggle, onRemove }) => (
-    <li
-        style={ {textDecoration: checked? 'line-through' : 'none'} }
-        onClick={ () => onToggle(id) }
-        onDoubleClick={ () => onRemove(id) }
+    <li 
+        style={{textDecoration: checked ? 'line-through' : 'none'}} 
+        onClick={() => onToggle(id)}
+        onDoubleClick={() => onRemove(id)}
     >
         {text}
     </li>
-)
+  )
 
 const Todos = ({todos, input, onInsert, onToggle, onRemove, onChange}) => {
+
     const todoItems = todos.map(
         todo => {
             const { id, checked, text } = todo.toJS();
