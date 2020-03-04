@@ -5,7 +5,7 @@ const INSERT = 'todo/INSERT';
 const TOGGLE = 'todo/TOGGLE';
 const REMOVE = 'todo/REMOVE';
 
-export const changeInput = createAction(CHANGE_INPUT);
-export const insert = createAction(INSERT);
-export const toggle = createAction(TOGGLE);
-export const remove = createAction(REMOVE);
+export const changeInput = createAction(CHANGE_INPUT, value => value);
+export const insert = createAction(INSERT, text => text);
+export const toggle = createAction(TOGGLE, id => id);
+export const remove = createAction(REMOVE, id => id);
